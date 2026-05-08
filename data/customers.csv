@@ -1,0 +1,54 @@
+customer_id,first_name,last_name,email,joined_date,city,country
+1031,Eva,Johnson,eva.johnson85@example.com,07/22/2020,Chicago,USA
+1024,Grace,Thomas,grace.thomas36@example.com,01-Feb-2023,Jacksonville,USA
+1021,Xander,Anderson,xander.anderson27@example.com,29-Dec-2020,Louisville,USA
+1012,Mike,Lewis,mike.lewis22@example.com,28-Dec-2023,San Diego,USA
+1017,Diana,Thomas,diana.thomas35@example.com,2024-03-31,Louisville,USA
+1021,Yusuf,Allen,yusuf.allen8@example.com,2020-07-27,Austin,USA
+1004,Rosa,Williams,rosa.williams28@example.com,12-May-2024,Austin,USA
+1008,Pam,Harris,pam.harris51@example.com,2023-02-23,Dallas,USA
+1036,Paul,Hall,paul.hall72@example.com,01/17/2024,Las Vegas,Germany
+1020,Bella,Robinson,bella.robinson52@example.com,2022-01-22,Phoenix,Canada
+1010,Fiona,Williams,fiona.williams97@example.com,2018-07-12,Phoenix,USA
+1034,Susan,Jackson,susan.jackson77@example.com,09/18/2018,Fort Worth,France
+1042,Diana,Martin,,26-Oct-2020,New York,USA
+1045,Susan,Thompson,susan.thompson97@example.com,28-Dec-2020,Austin,USA
+1030,Sam,Jackson,sam.jackson21@example.com,2023-02-02,Las Vegas,USA
+1041,George,Allen,george.allen23@example.com,2023-09-11,Memphis,USA
+1004,Oscar,Martin,oscar.martin78@example.com,2020-03-25,Jacksonville,USA
+1022,Ian,Allen,ian.allen68@example.com,03-Jan-2018,Austin,UK
+1047,Bob,Brown,bob.brown47@example.com,2021-06-13,Los Angeles,USA
+1005,Kevin,Williams,kevin.williams11@example.com,2023-06-14,Atlanta,Australia
+1029,Yusuf,Jones,yusuf.jones17@example.com,01-May-2023,Philadelphia,USA
+1011,Hannah,Clark,hannah.clark55@example.com,17-May-2020,Atlanta,USA
+1043,Uma,Moore,uma.moore52@example.com,03/10/2022,Seattle,USA
+1023,Hank,Davis,,2020-07-09,Austin,USA
+1039,Laura,Thompson,laura.thompson30@example.com,2024-08-07,New York,USA
+1025,Uma,Lewis,uma.lewis8@example.com,2020-07-26,Los Angeles,USA
+1001,Eva,Martin,eva.martin31@example.com,14-Feb-2021,Indianapolis,USA
+1026,Ian,Jones,ian.jones93@example.com,27-May-2024,Indianapolis,USA
+1049,Ethan,Jackson,ethan.jackson25@example.com,2019-01-22,Louisville,USA
+1019,Wendy,Jackson,wendy.jackson53@example.com,28-Mar-2023,Los Angeles,USA
+1032,David,Thomas,david.thomas94@example.com,2021-10-21,San Diego,USA
+1037,Mia,Thompson,mia.thompson58@example.com,07/29/2019,Philadelphia,USA
+1027,Diana,Davis,diana.davis10@example.com,21-Dec-2022,Houston,USA
+1013,Pam,Thompson,pam.thompson2@example.com,2019-01-18,Philadelphia,USA
+1040,Fiona,Harris,fiona.harris28@example.com,2022-07-01,Philadelphia,USA
+1033,Alice,Thomas,alice.thomas34@example.com,02/07/2023,Columbus,Australia
+1050,Ray,Walker,,2023-06-17,San Antonio,USA
+1014,Nate,Johnson,nate.johnson75@example.com,2024-01-30,Las Vegas,USA
+1046,David,Johnson,david.johnson75@example.com,07-May-2023,Seattle,USA
+1002,David,Martin,,2018-11-25,Chicago,France
+1003,Eva,Lee,,08/21/2020,Houston,Germany
+1028,Paul,Robinson,paul.robinson77@example.com,12-Jun-2018,Chicago,USA
+1038,Ray,Robinson,ray.robinson73@example.com,11/12/2023,Dallas,USA
+1006,Ray,Walker,ray.walker41@example.com,09/04/2020,Fort Worth,USA
+1035,Ray,Lewis,ray.lewis39@example.com,02/16/2023,Atlanta,USA
+1044,Alice,White,,19-Dec-2024,Houston,USA
+1007,Ian,Miller,ian.miller65@example.com,2020-12-22,Jacksonville,USA
+1001,Paul,Anderson,paul.anderson37@example.com,10/09/2019,Denver,USA
+1009,Nancy,Lewis,nancy.lewis68@example.com,02-Feb-2018,Denver,USA
+1015,Ray,Brown,ray.brown18@example.com,2020-12-19,Houston,Australia
+1016,Jack,Wilson,jack.wilson37@example.com,2024-10-13,Portland,USA
+1018,Nate,Lee,nate.lee82@example.com,17-Dec-2020,Indianapolis,USA
+1048,David,Williams,david.williams82@example.com,10/01/2022,Los Angeles,USA

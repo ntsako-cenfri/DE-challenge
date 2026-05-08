@@ -1,0 +1,26 @@
+product_id,name,category,price,stock_quantity
+P001,Wireless Headphones, Clothing,$103.39,326
+P002,USB-C Hub,Clothing ,$294.03,379
+P003,Mechanical Keyboard,Toys & Games ,$135.33,287
+P004,4K Monitor, Electronics ,$7.84,483
+P005,Webcam, Clothing,$265.51,279
+P006,Running Shoes, Books,$15.62,298
+P007,Yoga Mat,Toys & Games ,$167.98,65
+P008,Dumbbell Set, Books,$17.33,460
+P009,Cycling Shorts,Electronics ,$280.25,460
+P010,Resistance Bands,Home & Garden ,$110.54,341
+P011,Garden Hose,Toys & Games ,$35.31,498
+P012,Pruning Shears, Clothing,$188.09,473
+P013,Plant Pot,Clothing ,$279.30,499
+P014,Compost Bin,Clothing ,$240.96,451
+P015,Watering Can,Clothing ,$126.62,377
+P016,Python Programming Book,Toys & Games ,$277.71,410
+P017,Data Structures Guide,Home & Garden ,$202.61,136
+P018,Machine Learning Handbook,Clothing,$51.95,195
+P019,SQL Cookbook, Beauty,$262.28,113
+P020,Clean Code,Beauty ,$63.86,179
+P021,LEGO Set,Home & Garden ,$95.02,114
+P022,Board Game, Home & Garden,$11.97,204
+P023,Puzzle 1000pc, Electronics ,$101.83,495
+P024,Action Figure, Books,$233.12,328
+P025,Remote Control Car,Books,$155.26,480
