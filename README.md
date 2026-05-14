@@ -90,13 +90,14 @@ We are looking for correct results and clean, readable SQL.
 
 ## Evaluation Criteria
 
-| Criteria | Exceptional | Passing | Failing |
-| --- | --- | --- | --- |
-| **Code structure** | Clean functions, easy to follow | Works but hard to read | One long script, no functions |
-| **Data Types** | `DECIMAL` for money, `DATE` for dates | `TEXT` for everything | Fails to load due to type errors |
-| **Cleanliness** | Fixes all listed issues | Fixes some issues | Loads dirty data as-is |
-| **Testing** | Automated assertion (pytest or assert) | Print statement only | No check at all |
-| **SQL Quality** | Correct results, clean `JOIN` | Correct results, messy query | Wrong results |
+| Criteria | Marks | Exceptional | Passing | Failing |
+| --- | --- | --- | --- | --- |
+| **Data Cleaning** | 30 | Finds and fixes all listed issues | Fixes some issues | Loads dirty data as-is |
+| **SQL Quality** | 25 | Correct results, clean readable queries | Correct results, messy query | Wrong results or no queries |
+| **Code Structure** | 20 | Clean functions, easy to follow | Works but hard to read | One long script, no functions |
+| **Data Types** | 15 | `DECIMAL` for money, `DATE` for dates | `TEXT` for everything | Fails to load due to type errors |
+| **Testing** | 10 | Automated assertion (pytest or assert) | Print statement only | No check at all |
+| **Total** | **100** | | | |
 
 ---
 
