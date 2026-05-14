@@ -1,7 +1,7 @@
 # Data Engineering Take-Home Challenge
 
 **Time allowed:** 2 hours  
-**Submission:** A zipped folder or GitHub repository link
+**Submission:** A zipped folder
 
 ---
 
