@@ -102,7 +102,7 @@ We are looking for correct results and clean, readable SQL.
 
 ## Presentation (Panel Demo)
 
-After submitting, you will do a short **15-minute** live demo to the panel:
+After submitting, you may be required to demonstrate your work to the panel:
 
 1. Run your pipeline live and show the data landing in the database (a quick `SELECT` per table is enough)
 2. Walk through one cleaning step in your code and explain why you made that choice
@@ -120,4 +120,4 @@ After submitting, you will do a short **15-minute** live demo to the panel:
 - [ ] `README.md` explains how to set up and run
 - [ ] At least one automated check passes
 - [ ] At least two SQL queries are included and return correct results
-- [ ] You are ready for a 15-minute live demo
+- [ ] You are ready to demonstrate your work if required
