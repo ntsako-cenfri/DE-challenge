@@ -3,6 +3,8 @@
 **Time allowed:** 2 hours  
 **Submission:** A zipped folder
 
+> **Note on AI tools:** Using AI to generate your entire solution is strongly discouraged and will be checked. You will be required to explain every part of your submission in person — if you cannot explain it, it will not be credited.
+
 ---
 
 ## Objective
