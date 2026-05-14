@@ -72,13 +72,18 @@ submission/
 
 ## SQL Queries
 
-Write two SQL queries to answer:
+Write **at least two** SQL queries against the loaded data. The queries are your choice — pick anything that produces a meaningful result from the dataset.
 
-1. **Revenue by Category**  
-   Which product category generated the most revenue overall?
+Some ideas to get you started (you do not have to use these):
 
-2. **Orphaned Items Audit**  
-   Find all `order_items` rows that reference a `product_id` that does not exist in the `products` table.
+- Total revenue per product or category
+- Top 5 customers by spend
+- Number of orders per status
+- Average order value per month
+- Products that have never been ordered
+- Any other insight you find interesting in the data
+
+We are looking for correct results and clean, readable SQL.
 
 ---
 
@@ -100,7 +105,7 @@ After submitting, you will do a short **15-minute** live demo to the panel:
 
 1. Run your pipeline live and show the data landing in the database (a quick `SELECT` per table is enough)
 2. Walk through one cleaning step in your code and explain why you made that choice
-3. Run your two SQL queries and explain the results
+3. Run your SQL queries and briefly explain what each one shows
 4. The panel will ask one or two follow-up questions — there are no trick answers, we want to see how you think
 
 > **Tip:** A working solution that you can explain clearly is more valuable than a perfect solution you can't.
@@ -113,5 +118,5 @@ After submitting, you will do a short **15-minute** live demo to the panel:
 - [ ] Pipeline runs end-to-end with a single command (e.g. `python ingestion.py`)
 - [ ] `README.md` explains how to set up and run
 - [ ] At least one automated check passes
-- [ ] Two SQL queries are answered
+- [ ] At least two SQL queries are included and return correct results
 - [ ] You are ready for a 15-minute live demo
