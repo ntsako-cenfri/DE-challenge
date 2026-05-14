@@ -1,14 +1,13 @@
 # Data Engineering Take-Home Challenge
 
-**Time allowed:** 2–6 hours  
+**Time allowed:** 2 hours  
 **Submission:** A zipped folder or GitHub repository link
 
 ---
 
 ## Objective
 
-Build a reusable Python-based ETL pipeline that ingests raw CSV data into a PostgreSQL database.  
-The solution must be robust enough to handle schema variations and data quality issues.
+Write a Python script that reads the four CSV files, fixes the obvious data quality issues, loads the cleaned data into a database, and answers two SQL questions.
 
 ---
 
@@ -31,43 +30,30 @@ You are given four CSV files in the `data/` folder:
 
 ### 1. Ingestion (Python)
 
-- Write a Python script that dynamically reads any of the CSV files.
-- **Do not hard-code logic for a specific file.** The code will be tested against a 5th CSV file you have not seen.
-- Use a configuration file (YAML, TOML, or JSON) to declare table mappings and file paths.
+- Write a Python script that reads each CSV file using `pandas`.
+- Use functions — avoid writing one long procedural script.
 
-### 2. Storage (PostgreSQL)
+### 2. Storage
 
-- Load the cleaned data into a local PostgreSQL database.
-- Define DDL with correct data types: `DECIMAL` for money, `TIMESTAMP` for dates, `UUID` or `SERIAL` for IDs.
-- Apply appropriate primary key and foreign key constraints.
+- Load the cleaned data into a local database. PostgreSQL is preferred; SQLite is acceptable.
+- Use correct data types: `DECIMAL`/`REAL` for money, `DATE` or `TEXT` for dates, `INTEGER` for IDs.
 
-### 3. Data Profiling
+### 3. Data Cleaning
 
-Before loading, produce a summary report (printed or saved to file) that includes:
+Fix these issues during transformation:
 
-- Row count per file
-- Null percentage per column
-- Primary key uniqueness check
+- Prices stored as strings (e.g. `$10.00`) — strip the `$` and cast to a number
+- Leading/trailing whitespace in category names
+- Duplicate primary keys — keep the first occurrence
+- Null values in email — treat as optional, do not error
+- Future `order_date` values — drop those rows
 
-### 4. Data Quality Checks
+### 4. One Test
 
-Fix the following issues during transformation (you must detect them yourself):
-
-- Inconsistent date formats
-- Prices stored as strings (e.g. `$10.00`)
-- Leading/trailing whitespace in text columns
-- Duplicate primary keys
-- Null values in required fields
-- Logically invalid data (e.g. future order dates)
-- Referential integrity violations (foreign key mismatches across files)
-
-### 5. Unit Tests
-
-Include **at least two** automated tests, for example:
+Include **at least one** automated check, for example:
 
 - Price must be a positive number after cleaning
 - No duplicate `customer_id` values after deduplication
-- `order_items` must only reference valid `product_id` values
 
 ---
 
@@ -76,29 +62,22 @@ Include **at least two** automated tests, for example:
 ```
 submission/
 ├── data/               # The raw CSV files (unchanged)
-├── src/
-│   ├── ingestion.py    # Main ETL logic
-│   ├── utils.py        # Database helpers
-│   └── queries.sql     # Analytical SQL queries
-├── tests/              # Pytest or assert-based tests
-├── config.yaml         # Table mappings and file paths
+├── ingestion.py        # Cleaning + loading logic
+├── queries.sql         # SQL answers
 ├── requirements.txt    # Python dependencies
 └── README.md           # How to run your solution
 ```
 
 ---
 
-## Analytical SQL Queries
+## SQL Queries
 
-Write SQL queries (in `queries.sql` or inline) to answer these business questions:
+Write two SQL queries to answer:
 
 1. **Revenue by Category**  
-   Which product category generated the most revenue in the last 30 days?
+   Which product category generated the most revenue overall?
 
-2. **Churn Risk**  
-   List customers who have not placed an order in the last 6 months but have a total lifetime spend over $500.
-
-3. **Orphaned Items Audit**  
+2. **Orphaned Items Audit**  
    Find all `order_items` rows that reference a `product_id` that does not exist in the `products` table.
 
 ---
@@ -107,67 +86,32 @@ Write SQL queries (in `queries.sql` or inline) to answer these business question
 
 | Criteria | Exceptional | Passing | Failing |
 | --- | --- | --- | --- |
-| **Reusability** | Generic class/function driven by config; handles any CSV | Hard-coded for these 4 files only | One long script, no functions |
-| **Data Types** | `DECIMAL` for money, `TIMESTAMP` for dates | `TEXT` for everything | Fails to load due to type errors |
-| **Cleanliness** | Detects and fixes all issues; logs what was changed | Loads dirty data as-is | Ignores data quality entirely |
-| **Testing** | `pytest` with assertions on counts and constraints | Simple print statements | No tests |
-| **SQL Quality** | CTEs, window functions, proper use of `JOIN` | Subqueries that work but are unoptimised | Wrong results or syntax errors |
-
----
-
-## Bonus (Optional)
-
-- Add a `Dockerfile` and `docker-compose.yml` so the pipeline can be run with `docker compose up`.
-- Use `SQLAlchemy` ORM rather than raw SQL for table creation.
-- Log pipeline steps to a file using Python's `logging` module.
+| **Code structure** | Clean functions, easy to follow | Works but hard to read | One long script, no functions |
+| **Data Types** | `DECIMAL` for money, `DATE` for dates | `TEXT` for everything | Fails to load due to type errors |
+| **Cleanliness** | Fixes all listed issues | Fixes some issues | Loads dirty data as-is |
+| **Testing** | Automated assertion (pytest or assert) | Print statement only | No check at all |
+| **SQL Quality** | Correct results, clean `JOIN` | Correct results, messy query | Wrong results |
 
 ---
 
 ## Presentation (Panel Demo)
 
-After submitting your solution you will present it live to the panel. The session runs **20–30 minutes** and follows this structure:
+After submitting, you will do a short **15-minute** live demo to the panel:
 
-### 1. Walk Us Through Your Pipeline (10 min)
+1. Run your pipeline live and show the data landing in the database (a quick `SELECT` per table is enough)
+2. Walk through one cleaning step in your code and explain why you made that choice
+3. Run your two SQL queries and explain the results
+4. The panel will ask one or two follow-up questions — there are no trick answers, we want to see how you think
 
-Run the pipeline live and narrate what is happening:
-
-- Show the raw CSV files and point out the data quality issues you found.
-- Demonstrate the profiling output — row counts, null percentages, uniqueness checks.
-- Show the data landing in PostgreSQL (a quick `SELECT` per table is sufficient).
-
-### 2. Code Walkthrough (10 min)
-
-Open your editor and walk the panel through:
-
-- How your ingestion script is generic — explain how it would handle the 5th CSV file we haven't given you.
-- One transformation you are proud of (e.g. the date normalisation or the referential integrity fix).
-- Your test suite — run `pytest` live and explain what each test asserts.
-
-### 3. SQL Questions (5 min)
-
-Run your three SQL queries live and explain the results:
-
-- Which category drove the most revenue?
-- Which customers are churn risks?
-- How many orphaned order items exist, and what would you do about them in production?
-
-### 4. Panel Q&A (5 min)
-
-The panel may ask follow-up questions such as:
-
-- *"If the orders file had 200 million rows, what would you change?"*
-- *"How would you schedule this pipeline to run daily?"*
-- *"How would you alert the team when referential integrity failures exceed a threshold?"*
-
-> **Tip:** You do not need a perfect answer for every question. The panel is evaluating how you think, not just what you know.
+> **Tip:** A working solution that you can explain clearly is more valuable than a perfect solution you can't.
 
 ---
 
 ## Submission Checklist
 
 - [ ] All four CSV files are in `data/` (unmodified)
-- [ ] Pipeline runs end-to-end with a single command (e.g. `python src/ingestion.py`)
-- [ ] `README.md` explains setup, dependencies, and how to run
-- [ ] At least two automated tests pass
-- [ ] Three SQL queries are answered
-- [ ] You are ready to demo the pipeline and answer questions live
+- [ ] Pipeline runs end-to-end with a single command (e.g. `python ingestion.py`)
+- [ ] `README.md` explains how to set up and run
+- [ ] At least one automated check passes
+- [ ] Two SQL queries are answered
+- [ ] You are ready for a 15-minute live demo
