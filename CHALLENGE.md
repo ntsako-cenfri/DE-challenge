@@ -32,6 +32,7 @@ You are given four CSV files in the `data/` folder:
 
 - Write a Python script that reads each CSV file using `pandas`.
 - Use functions — avoid writing one long procedural script.
+- **Plus:** If your script is written in a way that it could handle a new CSV file with minimal changes (e.g. driven by a config or a reusable function), that is a strong signal and will be noted positively.
 
 ### 2. Storage
 
