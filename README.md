@@ -98,6 +98,7 @@ We are looking for correct results and clean, readable SQL.
 | **Data Types** | 15 | `DECIMAL` for money, `DATE` for dates | `TEXT` for everything | Fails to load due to type errors |
 | **Testing** | 10 | Automated assertion (pytest or assert) | Print statement only | No check at all |
 | **Total** | **100** | | | |
+| **Bonus — Reusable Code** | +10 | Pipeline handles a new CSV with no code changes (config-driven or generic function) | — | — |
 
 ---
 
